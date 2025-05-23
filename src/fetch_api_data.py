@@ -62,12 +62,12 @@ for player in tqdm(player_list_all, desc="Fetching player stats"):
         if player['is_active']:
             active_players_data.append(season_avgs)
 
-        # Save every 20 players to avoid data loss
+        #Save every 20 players to avoid data loss
         if len(all_players_data) % 20 == 0:
             pd.concat(all_players_data + [existing_df], ignore_index=True).to_csv('../data/raw_data/partial_all_players.csv', index=False)
             pd.concat(active_players_data + [active_df], ignore_index=True).to_csv('../data/raw_data/partial_active_players.csv', index=False)
         
-        time.sleep(0.5)  # Lowered to speed up if API allows
+        time.sleep(0.5)  #Lowered to speed up if API allows
     
     except KeyboardInterrupt:
         print("Manual interrupt received.")
@@ -76,11 +76,11 @@ for player in tqdm(player_list_all, desc="Fetching player stats"):
         print(f"Error processing player {player_id}: {e}")
         continue
 
-# === Final Save ===
+# Final Save 
 all_df = pd.concat(all_players_data + [existing_df], ignore_index=True)
 active_df = pd.concat(active_players_data + [active_df], ignore_index=True)
 
 all_df.to_csv('../data/raw_data/all_players_career_stats.csv', index=False)
 active_df.to_csv('../data/raw_data/active_players_career_stats.csv', index=False)
 
-print(f"\n✅ Done. Processed {len(all_df['PLAYER_ID'].unique())} total players.")
+print(f"\nDone. Processed {len(all_df['PLAYER_ID'].unique())} total players.")
