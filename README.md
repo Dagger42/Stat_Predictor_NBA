@@ -43,13 +43,13 @@ The model achieves the following **mean absolute error (MAE)** values on the tes
 [Click here to view the app](https://nbastatpredictor.streamlit.app/) 
 
 You can also run the app by cloning the repository and accessing the frontend directory and running
-'''bash
+```bash
 git clone https://github.com/Dagger42/Stat_Predictor_NBA.git
 # Install the required dependencies
 pip install -r requirements.txt
 
 #Run the app locally
 streamlit run frontend/app.py
-'''
+```
 
 ---
