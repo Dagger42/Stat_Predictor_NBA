@@ -1,21 +1,47 @@
-NBA Stat Predictor
-This project predicts next-season statistics for active NBA players using a machine learning model trained on historical player data. The predictions are presented through an interactive Streamlit web application.
+# NBA Stat Predictor
 
-Overview
-The NBA Stat Predictor is a data-driven tool that forecasts performance metrics such as points, assists, rebounds, games played, and minutes for over 400 active NBA players. The model is trained on data from more than 5,000 current and former NBA players, using season-by-season statistics obtained from the official NBA API.
+**NBA Stat Predictor** is a machine learning-powered web app that predicts next-season statistics for active NBA players. The model is trained on comprehensive historical data and presented through an interactive Streamlit interface.
 
-The model achieves the following mean absolute error (MAE) values on the test set:
+---
 
-MAE for Points: 2.5
+## Overview
 
-MAE for Assists: 0.6
+This application predicts season-level performance metrics for over **400 active NBA players**, including:
 
-MAE for Rebounds: 1.0
+- Points  
+- Assists  
+- Rebounds  
+- Games Played  
+- Minutes  
 
-Users can explore individual player predictions and compare them with historical data through an intuitive web interface.
+The underlying model is trained on data from more than **5,000 past and present NBA players**, leveraging season-by-season statistics retrieved using the [NBA API](https://github.com/swar/nba_api).
 
-Features
-Predicts player statistics for the upcoming season, including points, assists, rebounds, games played, and minutes
-Provides an interactive sidebar to search and select specific players
-Displays both predicted and past season statistics in a clean, scrollable format
-Utilizes an XGBoost-based multi-output regression model for accurate predictions
+### Model Performance
+
+The model achieves the following **mean absolute error (MAE)** values on the test set:
+
+| Metric     | MAE  |
+|------------|------|
+| Points     | 2.5  |
+| Assists    | 0.6  |
+| Rebounds   | 1.0  |
+
+---
+
+## Features
+
+- Predicts player statistics for the upcoming NBA season
+- Interactive player selection through a Streamlit sidebar
+- Displays both predicted and historical stats for comparison
+- Built with a multi-output XGBoost regression model
+- Simple and intuitive user interface
+
+---
+
+## Live Demo
+
+[Click here to view the app](https://nbastatpredictor.streamlit.app/) 
+
+You can also run the app by cloning the repository and accessing the frontend directory and running
+streamlit run app.py
+---
