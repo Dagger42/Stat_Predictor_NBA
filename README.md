@@ -22,9 +22,9 @@ The model achieves the following **mean absolute error (MAE)** values on the tes
 
 | Metric     | MAE  |
 |------------|------|
-| Points     | 2.5  |
-| Assists    | 0.6  |
-| Rebounds   | 1.0  |
+| Points     | 2.40  |
+| Assists    | 0.61  |
+| Rebounds   | 0.99  |
 
 ---
 
