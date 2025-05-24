@@ -1,8 +1,14 @@
 import pandas as pd
+import os
 import streamlit as st
 
-df_pred = pd.read_csv('../data/predicted_stats/active_players_next_season_predictions.csv')
-df_past = pd.read_csv('../data/processed_data/active_players_pg_stats.csv')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+pred_stats_path = os.path.join(BASE_DIR, '..', 'data', 'predicted_stats', 'active_players_next_season_predictions.csv')
+past_stats_path = os.path.join(BASE_DIR, '..', 'data', 'processed_data', 'active_players_pg_stats.csv')
+
+
+df_pred = pd.read_csv(pred_stats_path)
+df_past = pd.read_csv(past_stats_path)
 
 player_names = df_pred['PLAYER_NAME'].unique()
 selected_player = st.sidebar.selectbox("Choose a player", player_names)
