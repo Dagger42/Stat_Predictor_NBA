@@ -1,6 +1,6 @@
 # NBA Stat Predictor
 
-**NBA Stat Predictor** is a machine learning-powered web app that predicts next-season statistics for active NBA players. The model is trained on comprehensive historical data and presented through an interactive Streamlit interface.
+**NBA Stat Predictor** is a machine learning-powered web app that predicts next-season statistics for active NBA players. The prediction model is trained on comprehensive historical data and presented through an interactive Streamlit interface.
 
 ---
 
@@ -43,5 +43,13 @@ The model achieves the following **mean absolute error (MAE)** values on the tes
 [Click here to view the app](https://nbastatpredictor.streamlit.app/) 
 
 You can also run the app by cloning the repository and accessing the frontend directory and running
-streamlit run app.py
+'''bash
+git clone https://github.com/Dagger42/Stat_Predictor_NBA.git
+# Install the required dependencies
+pip install -r requirements.txt
+
+#Run the app locally
+streamlit run frontend/app.py
+'''
+
 ---
