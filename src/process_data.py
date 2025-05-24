@@ -13,11 +13,11 @@ df_pg_active = df_active.copy()
 df_pg_active.drop(['FG_PCT','FG3_PCT','FT_PCT', 'GS'], axis = 1, inplace=True)
 
 df_pg_active = df_pg_active.groupby(['PLAYER_ID', 'SEASON_ID'], as_index=False).agg({
-    'PTS': 'sum',
-    'AST': 'sum',
-    'REB': 'sum',
+    'PTS': 'last',
+    'AST': 'last',
+    'REB': 'last',
     'GP': 'last',
-    'MIN': 'sum',
+    'MIN': 'last',
     'TEAM_ID': 'last',
     'IS_ACTIVE': 'last',
     'PLAYER_NAME': 'last',
@@ -55,10 +55,10 @@ df_pg_all = df_all.copy()
 df_pg_all.drop(['FG_PCT','FG3_PCT','FT_PCT', 'GS'], axis=1, inplace=True)
 
 df_pg_all = df_pg_all.groupby(['PLAYER_ID', 'SEASON_ID'], as_index=False).agg({
-    'PTS': 'sum',
-    'AST': 'sum',
-    'REB': 'sum',
-    'MIN': 'sum',
+    'PTS': 'last',
+    'AST': 'last',
+    'REB': 'last',
+    'MIN': 'last',
     'GP' : 'last',
     'TEAM_ID': 'last',
     'IS_ACTIVE': 'last',
