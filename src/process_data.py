@@ -16,7 +16,7 @@ df_pg_active = df_pg_active.groupby(['PLAYER_ID', 'SEASON_ID'], as_index=False).
     'PTS': 'sum',
     'AST': 'sum',
     'REB': 'sum',
-    'GP': 'sum',
+    'GP': 'last',
     'MIN': 'sum',
     'TEAM_ID': 'last',
     'IS_ACTIVE': 'last',
@@ -58,15 +58,14 @@ df_pg_all = df_pg_all.groupby(['PLAYER_ID', 'SEASON_ID'], as_index=False).agg({
     'PTS': 'sum',
     'AST': 'sum',
     'REB': 'sum',
-    'GP': 'sum',
     'MIN': 'sum',
+    'GP' : 'last',
     'TEAM_ID': 'last',
     'IS_ACTIVE': 'last',
     'PLAYER_NAME': 'last',
     'PLAYER_AGE': 'last',
 })
 
-print(df_pg_active[(df_pg_active['PLAYER_ID'] == 2544) & (df_pg_active['SEASON_ID'] == '2005-06')])
 
 df_pg_all['GP'] = df_pg_all['GP'].replace(0, pd.NA)
 df_pg_all['PTS'] = df_pg_all['PTS'] / df_pg_all['GP']
